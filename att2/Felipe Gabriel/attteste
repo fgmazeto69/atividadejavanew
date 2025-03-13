@@ -1,0 +1,67 @@
+import java.util.Scanner;
+
+public class att1new {
+
+	    public static void main(String[] args) {
+	        Scanner scanner = new Scanner(System.in);
+	        int opcao;
+
+	        do {
+	            
+	            System.out.println("Calculadora Loja de Plantas da Dona Gabrielinha");
+	            System.out.println("[1] - Calcular Preço Total");
+	            System.out.println("[2] - Calcular Troco");
+	            System.out.println("[3] - Sair");
+	            System.out.print("Escolha uma opção: ");
+	            opcao = scanner.nextInt();
+
+	          
+	          
+	            switch (opcao) {
+	                case 1:
+	                    calcularPrecoTotal(scanner);
+	                    break;
+	                case 2:
+	                    calcularTroco(scanner);
+	                    break;
+	                case 3:
+	                    System.out.println("Saindo... Obrigado por usar a Calculadora da Dona Gabrielinha!");
+	                    break;
+	                default:
+	                    System.out.println("Opção inválida! Por favor, escolha uma opção válida.");
+	            }
+
+	        } while (opcao != 3);
+
+	        scanner.close();
+	    }
+
+	    
+	    public static void calcularPrecoTotal(Scanner scanner) {
+	        System.out.print("Informe a quantidade de plantas: ");
+	        int quantidade = scanner.nextInt();
+	        System.out.print("Informe o preço unitário da planta: R$ ");
+	        double precoUnitario = scanner.nextDouble();
+
+	        double precoTotal = quantidade * precoUnitario;
+	        System.out.println("O preço total da compra é: R$ " + precoTotal);
+	    }
+
+	    
+	    public static void calcularTroco(Scanner scanner) {
+	        System.out.print("Informe o valor pago pelo cliente: R$ ");
+	        double valorPago = scanner.nextDouble();
+	        System.out.print("Informe o valor total da compra: R$ ");
+	        double valorTotal = scanner.nextDouble();
+
+	        if (valorPago < valorTotal) {
+	            System.out.println("O valor pago é insuficiente para cobrir o valor da compra.");
+	        } else {
+	            double troco = valorPago - valorTotal;
+	            System.out.println("O troco a ser dado ao cliente é: R$ " + troco);
+	        }
+	    }
+	}
+	}
+
+}
